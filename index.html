@@ -77,7 +77,7 @@
     $("article > img").addClass("image-center");
 
     //remove last paragraph in the article
-    $("article > p").get(-1).remove();
+    $("article > p:last-child").remove(); // use last child or .last()
 
     //Set font size of title to rand# of pixels 0-100
     $("#title").css("fontSize", `${Math.round(Math.random() * 100)}px`);
@@ -92,20 +92,20 @@
     // add an "on" , args change, form-control, func
     // invoked, declare a color based on input
     // invoke jquery to assign bg color basked on these vars
-    // $(".row mb-5").on("change", ".form-control", colorChange); // ask about why it doens't work
-      $(".form-control").on("change", colorChange);
+    $(".mb-5").on("change", ".form-control", colorChange); // ask about why it doens't work
+      // $(".form-control").on("change", colorChange);
     function colorChange (){
-      const red = $(".form-control").get(0).value;
-      const green = $(".form-control").get(1).value;
-      const blue = $(".form-control").get(2).value;
+      const red = $(".form-control").eq(0).val()
+      const green = $(".form-control").eq(1).val()
+      const blue = $(".form-control").eq(2).val()
 
       $("body").css("backgroundColor", `rgb(${red},${green},${blue})`);
     }
     // select the image element
     // on click, func
     $("img").on("click", removeBork);
-    function removeBork (){
-      $("img").remove();
+    function removeBork (evt){
+      $(evt.target).remove();
     }
   </script>
 </body>
