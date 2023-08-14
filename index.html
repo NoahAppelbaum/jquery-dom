@@ -88,6 +88,25 @@
     //empty aside and put a p in apologizing
     $("aside").empty().append("<p>");
     $("aside > p").text("So sorry about the abysmal list!");
+    //select all inputs,
+    // add an "on" , args change, form-control, func
+    // invoked, declare a color based on input
+    // invoke jquery to assign bg color basked on these vars
+    // $(".row mb-5").on("change", ".form-control", colorChange); // ask about why it doens't work
+      $(".form-control").on("change", colorChange);
+    function colorChange (){
+      const red = $(".form-control").get(0).value;
+      const green = $(".form-control").get(1).value;
+      const blue = $(".form-control").get(2).value;
+
+      $("body").css("backgroundColor", `rgb(${red},${green},${blue})`);
+    }
+    // select the image element
+    // on click, func
+    $("img").on("click", removeBork);
+    function removeBork (){
+      $("img").remove();
+    }
   </script>
 </body>
 
