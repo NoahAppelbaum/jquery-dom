@@ -1,0 +1,26 @@
+input {
+  display: block;
+  margin-bottom: 25px;
+  width: 25%;
+  height: 20px;
+  font: sans-serif;
+  font-size: 20px;
+}
+
+.submit-button{
+  width: 25%;
+  height: 50px;
+  font-size: 20px;
+}
+
+.movie-entry{
+  margin-top: 50px;
+  font-size: 20px;
+}
+
+.remove-button{
+  margin-left: 20px;
+  width: 120px;
+  height: 40px;
+  font-size: 20px;
+}
